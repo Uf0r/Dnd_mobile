@@ -5,38 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Информационная страница</title>
     <style>
-     body{
-        background-color:rgb(37, 31, 31);
-        
-     }
-     li{
-        color: peru;
-     }
+     body {
+    background-color: rgb(37, 31, 31);
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
 
-     ul{
-        color: rgb(221, 143, 65);
-     }
-     .big_list_container{
-        background-color: beige;
-        width: 90%;
-        height: auto;
-        margin-left: 5%;
+.big_list_container {
+    background-color: beige;
+    width: 100%; /* Use full width */
+    padding: 5px; /* Add some padding for better spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
 
-        display: flex;
-        justify-content: center; 
-     }
-     p{
-        margin: auto;
-     }
-     .sec_list_container{
-        width: 45%;
-        height: auto;
-        margin-left: 1%; 
+.sec_list_container {
+    width: 100%; /* Use full width for smaller screens */
+    margin-left: 0; /* Remove left margin for better responsiveness */
+}
 
-     }
-     .hiden{
-        display: block;
-     }
+h1, h3, p, li {
+    margin: 5px 0; /* Add margin for better spacing */
+}
+
+/* Media query for small screens (phones) */
+@media only screen and (max-width: 600px) {
+    .big_list_container {
+        padding: 10px; /* Increase padding for better spacing on smaller screens */
+    }
+
+    .sec_list_container {
+        width: 100%; /* Use full width for smaller screens */
+        margin-left: 0; /* Remove left margin for better responsiveness */
+    }
+}
     </style>
 </head>
 <body>
