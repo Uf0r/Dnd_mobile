@@ -7,35 +7,36 @@
     <style>
      body {
     background-color: rgb(37, 31, 31);
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
+    margin: 0;
+    padding: 0;
 }
 
 .big_list_container {
     background-color: beige;
-    width: 100%; /* Use full width */
-    padding: 5px; /* Add some padding for better spacing */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 90%;
+    margin: 5% auto; /* Center the container and provide some space on the sides */
+    padding: 20px; /* Add some padding for better spacing */
 }
 
 .sec_list_container {
-    width: 100%; /* Use full width for smaller screens */
-    margin-left: 0; /* Remove left margin for better responsiveness */
+    width: 100%;
+    margin-left: 0;
 }
 
 h1, h3, p, li {
-    margin: 5px 0; /* Add margin for better spacing */
+    margin: 5px 0;
 }
 
 /* Media query for small screens (phones) */
 @media only screen and (max-width: 600px) {
     .big_list_container {
-        padding: 10px; /* Increase padding for better spacing on smaller screens */
+        width: 100%; /* Use full width on smaller screens */
+        padding: 10px; /* Adjust padding for better spacing on smaller screens */
     }
 
     .sec_list_container {
-        width: 100%; /* Use full width for smaller screens */
-        margin-left: 0; /* Remove left margin for better responsiveness */
+        width: 100%;
+        margin-left: 0;
     }
 }
     </style>
