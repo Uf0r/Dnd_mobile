@@ -30,7 +30,10 @@ h1, h3, p, li {
 li {
     font-size: 10px;
 }
-
+.taina{
+    font-style: italic;
+    font-size: 7px;
+}
 
 /* Media query for small screens (phones) */
 @media only screen and (max-width: 600px) {
@@ -44,85 +47,120 @@ li {
         margin-left: 0;
     }
 }
+
+.options {
+            display: none;
+            position: absolute;
+            background-color: orange;
+            border: 2px solid red;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="list_container big_list_container">
         <div class="list_hara_container sec_list_container"><h1>Параметры</h1>
-            <ul class="list_chara_big"> <h3>Основные</h3>
-                <ul class="heal"><p>Выносливость</p>
+            <ul class="list_chara_big"> <h3 onclick="toggleList(this)">Основные</h3>          <!--Основные характеристики-->
+               <div class="sub-list">
+                <ul class="heal"><p onclick="toggleList(this)">Выносливость</p>
                     <ul>
                         <li>Влияет на дальность движения за ход и частично на запас жизни</li>
                         <li>Жизнь расчитываеться выносливость*телосложение*1.5 </li>
                         <li>Дальность движения расчитвываеться выносливость*15м</li>
                     </ul>
                 </ul>
-                <ul class="str"><p>Сила</p>
+                <ul class="str"><p onclick="toggleList(this)">Сила</p>
                     <ul>
                         <li>Влияет на максимальный переносимый вес и базовый множитель урона</li>
                         <li>Урон расчитываеться Сила*d6</li>
                         <li>Вес расчитываеться Сила*телосложение*3кг</li>
                     </ul>
                 </ul>
-                <ul class="dex"><p>Ловкость</p>
+                <ul class="dex"><p onclick="toggleList(this)">Ловкость</p>
                     <ul>
                         <li>Влияет на скорость передвижения и шанс уклонения</li>
                         <li>Скорость расчитвываеться Ловкость*1.1м/с</li>
                         <li>Шанс уклонения расчитвываетьсяЛовкость*0.1%</li>
                     </ul>
                 </ul>
-                <ul class="phys"><p>телосложение</p>
+                <ul class="phys"><p onclick="toggleList(this)">Телосложение</p>
                     <ul>
                         <li>Влияет на запас и скорость восстановления жизни</li>
                         <li>Жизнь расчитываеться выносливость*телосложение*1.5</li>
                         <li>Восстановление расчитвываеться телосложение*0.1хп/ход</li>
                     </ul>
                 </ul>
-                <ul class="int"><p>Интелект</p>
+                <ul class="int"><p onclick="toggleList(this)">Интелект</p>
                     <ul>
                         <li>Влияет на урон магией частично на восстановление маны </li>
                         <li>Урон расчитвываеться интелект*d6</li>
                         <li>Восстановление маны расчитвываеться Интелект*мудрость*0.5/ход</li>
                     </ul>
                 </ul>
-                <ul class="wis"><p>мудрость</p>
+                <ul class="wis"><p onclick="toggleList(this)">Мудрость</p>
                     <ul>
                         <li>Влияет на защиту от магии и частисно на восстановление маны</li>
                         <li>Защита расчитвываеться мудрость*0.1</li>
                         <li>Восстановление маны расчитвываеться Интелект*мудрость*0.5/ход</li>
                     </ul>
                 </ul>
-                <ul class="hope"><p>Вера</p>
+                <ul class="hope"><p onclick="toggleList(this)">Вера</p>
                     <ul>
                         <li>Влияет на святой урон и эффективность молитв</li>
-                        <li>святой урон расчитвываеться вера*интелект*(d4-на живых  d12-на мертвых)</li>
+                        <li>Святой урон расчитвываеться вера*интелект*(d4-на живых  d12-на мертвых)</li>
                         <li>эффективность молитв вера*0.3</li>
                     </ul>
                 </ul>
+               </div>
             </ul>
-            <ul class="list_chara_dop"> <h3>Вторичные</h3>
-                <ul class="dur">Стойкость
-                    <ul>
-                        <li>страница</li>
-                        <li>п</li>
-                        <li>р</li>
+            <ul class="list_chara_dop" > <h3 onclick="toggleList(this)">Вторичные</h3>      <!--Вторичные характеристики-->
+                <div class="sub-list">
+                    <ul class="dur">Стойкость
+                        <ul>
+                            <li>Влияет на шанс не получить физ.урон</li>
+                            <li>Шанс не получить урон Стойкость*d20</li>
+                            <li>В зависимости от мира может влиять и на другие Параметры</li>
+                        </ul>
                     </ul>
-                </ul>
-            </ul> 
-            <ul class="list_chara_tmp"> <h3>Временные</h3>
-                <ul class="dur">Стойкость
-                    <ul>
-                        <li>страница</li>
-                        <li>п</li>
-                        <li>р</li>
+                    <ul class="stelth">Незаметность
+                        <ul>
+                            <li>Влияет на радиус обнаружения врагами</li>
+                            <li>Радиус -незаметность*0.1%</li>
+                            <li>Есть также шанс моментального убийства из тени</li>
+                        </ul>
                     </ul>
-                </ul>
-            </ul>   
+                    <ul class="aff">Сродство
+                        <ul>
+                            <li>Харкатеристика влияет на скорость овладения чем-либо</li>
+                            <li>Также влияет на степень отклика мира</li>
+                            <li>Улучшает действия персонажа</li>
+                        </ul>
+                    </ul>
+                    <ul class="aura">Аура
+                        <ul>
+                            <li>Внешнее проявление силы персонажа</li>
+                            <li>Влияет на реакцию жителей мира на игрока</li>
+                            <li>Не может изменяться игроком вручную</li>
+                        </ul>
+                    </ul>
+                </ul> 
+                <ul class="list_chara_tmp"> <h3 onclick="toggleList(this)">Временные</h3>      <!--Временные характеристики и эффекты-->
+                    <div>
+                        <ul class="dur">Страх
+                            <ul>
+                                <li>Влияет на действия персонажа</li>
+                                <li></li>
+                                <li class="taina">Лишь переживший страх может быть сильным</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </ul>   
+                </div>
 
-        </div>\
+        </div>
         <div class="list_monster_container sec_list_container"><h1>Монстры</h1>
             <ul class="list_monster_big"><h3>Разумные</h3> 
-                <ul class="dead"><p>Нежить</p>
+                <ul class="fear"><p>Нежить</p>
                     <ul>
                         <li>Данная харкатеристика 0</li>
                         <li>лп</li>
@@ -145,7 +183,11 @@ li {
         
     </div>
     <script>
-  
+        
+        function toggleList(element) {
+            var subList = element.nextElementSibling; // Get the next sibling, which is the sub-list
+            subList.style.display = subList.style.display === 'none' ? 'block' : 'none';
+        }
 </script>
 <!-- <div class="list_monster_container sec_list_container"><h1>Монстры</h1>
             <ul class="list_monster_big"><h3>Разумные</h3> 
