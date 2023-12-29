@@ -183,6 +183,13 @@ li {
         
     </div>
     <script>
+         document.addEventListener("DOMContentLoaded", function() {
+            // Hide all sub-lists initially
+            var subLists = document.querySelectorAll(".sub-list");
+            subLists.forEach(function(subList) {
+                subList.style.display = 'none';
+            });
+        });
         
         function toggleList(element) {
             var subList = element.nextElementSibling; // Get the next sibling, which is the sub-list
