@@ -156,8 +156,8 @@ li {
                     </div>
                 </ul>   
                 </div>
-
-        </div>
+            </ul>
+       
         <div class="list_monster_container sec_list_container"><h1>Монстры</h1>
             <ul class="list_monster_big"><h3>Разумные</h3> 
                 <ul class="fear"><p>Нежить</p>
@@ -190,7 +190,6 @@ li {
                 subList.style.display = 'none';
             });
         });
-        
         function toggleList(element) {
             var subList = element.nextElementSibling; // Get the next sibling, which is the sub-list
             subList.style.display = subList.style.display === 'none' ? 'block' : 'none';
