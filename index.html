@@ -55,13 +55,7 @@ ul{
     }
 }
 
-.options {
-            display: none;
-            position: absolute;
-            background-color: orange;
-            border: 2px solid red;
-            padding: 5px;
-        }
+
     </style>
 </head>
 <body>
@@ -166,8 +160,6 @@ ul{
          </div>
          
           </div>
-          
-       
         <div class="list_monster_container sec_list_container"><h1 onclick="toggleList(this)">Монстры</h1>
             <div  class="sub-list">
                 <ul class="list_monster_big"><h3 onclick="toggleList(this)">Разумные</h3> 
@@ -264,6 +256,22 @@ ul{
                 </ul>
             </div>
         </div>
+        <div class="list_item_container sec_list_container"><h1 onclick="toggleList(this)">Уровни</h1>
+            <div class="sub-list">
+                <ul class="list_item_big"><h3 onclick="toggleList(this)">Набор опыта</h3> 
+                    <div class="sub-list">
+                        <ul class="common"><p onclick="toggleList(this)">за бои</p>
+                            <ul  class="sub-list">
+                                <li>Данная харкатеристика 0</li>
+                                <li>лп</li>
+                                <li>рп</li>
+                            </ul>
+                        </ul>
+
+                    </div>
+                </ul>
+            </div>
+        </div>
         
         
     </div>
@@ -280,15 +288,21 @@ ul{
             subList.style.display = subList.style.display === 'none' ? 'block' : 'none';
         }
 </script>
-<!-- <div class="list_monster_container sec_list_container"><h1>Монстры</h1>
-            <ul class="list_monster_big"><h3>Разумные</h3> 
-                <ul class="heal"><p>Нежить</p>
-                    <ul>
-                        <li>Данная харкатеристика 0</li>
-                        <li>лп</li>
-                        <li>рп</li>
-                    </ul>
+<!-- <div class="list_item_container sec_list_container"><h1 onclick="toggleList(this)">Професии</h1>
+            <div class="sub-list">
+                <ul class="list_item_big"><h3 onclick="toggleList(this)">Список</h3> 
+                    <div class="sub-list">
+                        <ul class="common"><p onclick="toggleList(this)">кузнец</p>
+                            <ul  class="sub-list">
+                                <li>Данная харкатеристика 0</li>
+                                <li>лп</li>
+                                <li>рп</li>
+                            </ul>
+                        </ul>
+
+                    </div>
                 </ul>
+            </div>
         </div>-->
 
 
