@@ -6,17 +6,22 @@
     <title>Информационная страница</title>
     <style>
      body {
-    background-color: rgb(37, 31, 31);
+    background-color: #250000; /* Dark red-brown background */
     margin: 0;
     padding: 0;
+    color: #a09090; /* Light red text color */
+    font-family: 'Georgia', serif;
 }
 
 .big_list_container {
-    background-color: beige;
+    background-color: #3a0e0e; /* Dark red container */
     width: 90%;
-    margin: 5% auto; /* Center the container and provide some space on the sides */
-    padding: 20px; /* Add some padding for better spacing */
+    margin: 5% auto;
+    padding: 20px;
     margin-left: 5%;
+    border: 2px solid #8b0000; /* Dark red border */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .sec_list_container {
@@ -27,25 +32,30 @@
 h1, h3, p, li {
     margin: 5px 0;
 }
-p{
-    color: rgb(82, 82, 65);
+
+p {
+    color: #525241; /* Dark yellowish text color */
+    font-size: 14px;
 }
+
 li {
     font-size: 10px;
 }
-.taina{
+
+.taina {
     font-style: italic;
     font-size: 7px;
 }
-ul{
+
+ul {
     margin-top: -5px;
 }
 
 /* Media query for small screens (phones) */
 @media only screen and (max-width: 600px) {
     .big_list_container {
-        width: 100%; /* Use full width on smaller screens */
-        padding: 10px; /* Adjust padding for better spacing on smaller screens */
+        width: 100%;
+        padding: 10px;
     }
 
     .sec_list_container {
@@ -53,6 +63,27 @@ ul{
         margin-left: 0;
         margin-top: -3px;
     }
+}
+
+/* Additional styling for sub-lists */
+.sub-list {
+    border-left: 2px solid #8b0000; /* Dark red left border for sub-lists */
+    padding-left: 10px;
+}
+
+/* Styling for different categories */
+.list_chara_big, .list_chara_dop, .list_chara_tmp, .list_monster_big {
+    margin-left: 20px;
+}
+
+.list_monster_container {
+    margin-top: 20px;
+}
+
+/* Styling for hover effect on clickable elements */
+.list_hara_container h1:hover, .list_monster_container h1:hover {
+    cursor: pointer;
+    color: #cd853f; /* Change color on hover to a darker orange */
 }
 
 
