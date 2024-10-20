@@ -70,6 +70,66 @@
         button:hover {
             background-color: #666;
         }
+        .columns {
+            display: flex;
+            margin-top: 20px;
+        }
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
+        /* Styling for race column */
+        .race-column {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 15px;
+            color: #d4af37;
+            text-align: left;
+        }
+        /* Styling for class column */
+        .class-column {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 15px;
+            color: #d4af37;
+            text-align: left;
+        }
+        /* Unique styling for middle column (elements) */
+        .middle-column {
+            background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 15px;
+            color: #d4af37;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .element {
+            cursor: pointer;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .element:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .element-description {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #d4af37;
+            margin-top: 5px;
+            color: #d4af37;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
@@ -121,54 +181,110 @@
     </form>
     <p id="result"></p>
 
+    <div class="columns">
+        <div class="column race-column">
+            <div class="element" onclick="toggleRaceDescription('humansDescription')">Люди</div>
+            <div id="humansDescription" class="element-description">Не обладают высокой скоростью обучения, но полностью универсальны.</div>
+            
+            <div class="element" onclick="toggleRaceDescription('elvesDescription')">Эльфы</div>
+            <div id="elvesDescription" class="element-description">Высокие существа, одаренные магией природы и светом.</div>
+            
+            <div class="element" onclick="toggleRaceDescription('dragonbornDescription')">Драконорожденные</div>
+            <div id="dragonbornDescription" class="element-description">Потомки драконов, способны использовать драконью магию.</div>
+            
+            <div class="element" onclick="toggleRaceDescription('tieflingsDescription')">Тифлинги</div>
+            <div id="tieflingsDescription" class="element-description">Потомки демонов, используют тёмную магию и заклинания.</div>
+            
+            <div class="element" onclick="toggleRaceDescription('aasimarDescription')">Аасимары</div>
+            <div id="aasimarDescription" class="element-description">Потомки небесных существ, способны использовать светлую магию и исцеление.</div>
+            
+            <div class="element" onclick="toggleRaceDescription('dwarvesDescription')">Гномы</div>
+            <div id="dwarvesDescription" class="element-description">Низкорослые существа, часто владеющие магией земли и металлов.</div>
+        </div>
+
+        <div class="column middle-column">
+            <h2>Стихии</h2>
+            <div class="element" onclick="toggleElementDescription('fire')">Огонь</div>
+            <div id="fire" class="element-description">Стихия разрушения и тепла.</div>
+            
+            <div class="element" onclick="toggleElementDescription('water')">Вода</div>
+            <div id="water" class="element-description">Стихия спокойствия и глубины.</div>
+            
+            <div class="element" onclick="toggleElementDescription('air')">Воздух</div>
+            <div id="air" class="element-description">Стихия легкости и скорости.</div>
+            
+            <div class="element" onclick="toggleElementDescription('earth')">Земля</div>
+            <div id="earth" class="element-description">Стихия стабильности и прочности.</div>
+        </div>
+        
+        <div class="column class-column">
+            <h2>Классы</h2>
+            <div class="element" onclick="toggleClassDescription('wizardDescription')">Маг</div>
+            <div id="wizardDescription" class="element-description">Специалист в заклинаниях и ритуалах, использует магические книги и артефакты и внешние источники энергии.</div>
+
+            <div class="element" onclick="toggleClassDescription('sorcererDescription')">Колдун</div>
+            <div id="sorcererDescription" class="element-description">Прирожденный маг, чья сила проистекает из внутреннего источника или заключённого пакта.</div>
+
+            <div class="element" onclick="toggleClassDescription('shamanDescription')">Шаман</div>
+            <div id="shamanDescription" class="element-description">Практик магии природы и духов, общается с духами и природными сущностями.</div>
+
+            <div class="element" onclick="toggleClassDescription('sorceressDescription')">Чародей</div>
+            <div id="sorceressDescription" class="element-description">Маг, обладающий знаниями о создании и разрушении магических заклинаний.</div>
+
+            <div class="element" onclick="toggleClassDescription('necromancerDescription')">Некромант</div>
+            <div id="necromancerDescription" class="element-description">Использует силу смерти и духов, управляет мертвыми.</div>
+
+            <div class="element" onclick="toggleClassDescription('illusionistDescription')">Иллюзионист</div>
+            <div id="illusionistDescription" class="element-description">Создает иллюзии и обманы, манипулирует восприятием реальности.</div>
+
+            <div class="element" onclick="toggleClassDescription('priestDescription')">Жрец</div>
+            <div id="priestDescription" class="element-description">Маг, черпающий силы из божественных источников и проводящий ритуалы.</div>
+
+            <div class="element" onclick="toggleClassDescription('alchemistDescription')">Алхимик</div>
+            <div id="alchemistDescription" class="element-description">Создает зелья и эликсиры, преобразует вещества и объекты.</div>
+
+            <div class="element" onclick="toggleClassDescription('arcanistDescription')">Арканит</div>
+            <div id="arcanistDescription" class="element-description">Обладатель древних знаний и умений, использующий и создающий магические артефактами.</div>
+
+            <div class="element" onclick="toggleClassDescription('antimagicianDescription')">Антимаг</div>
+            <div id="antimagicianDescription" class="element-description">В следствии долгих гонений перестали считаться магами, абсолютные универсалы поглощающие чужие способности.</div>
+        </div>
+    </div>
+
     <script>
-        function toggleDescription(id) {
-            const element = document.getElementById(id);
-            if (element.style.display === "none" || element.style.display === "") {
-                element.style.display = "block";
-            } else {
-                element.style.display = "none";
-            }
+        function toggleDescription(descriptionId) {
+            const description = document.getElementById(descriptionId);
+            description.style.display = description.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleRaceDescription(raceId) {
+            const raceDescription = document.getElementById(raceId);
+            raceDescription.style.display = raceDescription.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleElementDescription(elementId) {
+            const elementDescription = document.getElementById(elementId);
+            elementDescription.style.display = elementDescription.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleClassDescription(classId) {
+            const classDescription = document.getElementById(classId);
+            classDescription.style.display = classDescription.style.display === 'none' ? 'block' : 'none';
         }
 
         function calculate() {
-            const strength = parseInt(document.getElementById('strength').value);
-            const dexterity = parseInt(document.getElementById('dexterity').value);
-            const endurance = parseInt(document.getElementById('endurance').value);
-            const constitution = parseInt(document.getElementById('constitution').value);
-            const intelligence = parseInt(document.getElementById('intelligence').value);
-            const wisdom = parseInt(document.getElementById('wisdom').value);
-            const charisma = parseInt(document.getElementById('charisma').value);
-            
+            const strength = parseInt(document.getElementById('strength').value) || 0;
+            const dexterity = parseInt(document.getElementById('dexterity').value) || 0;
+            const endurance = parseInt(document.getElementById('endurance').value) || 0;
+            const constitution = parseInt(document.getElementById('constitution').value) || 0;
+            const intelligence = parseInt(document.getElementById('intelligence').value) || 0;
+            const wisdom = parseInt(document.getElementById('wisdom').value) || 0;
+            const charisma = parseInt(document.getElementById('charisma').value) || 0;
+
             const total = strength + dexterity + endurance + constitution + intelligence + wisdom + charisma;
-            const values = [strength, dexterity, endurance, constitution, intelligence, wisdom, charisma];
-            const minValue = Math.min(...values);
-            const valid = values.every(value => value <= minValue * 2);
-            
+
             const resultElement = document.getElementById('result');
-            resultElement.innerHTML = '';
-            
-            values.forEach((value, index) => {
-                const inputElement = document.querySelectorAll('input')[index];
-                if (value > minValue * 2) {
-                    inputElement.style.color = 'red';
-                } else {
-                    inputElement.style.color = 'black';
-                }
-            });
-            
-            if (total === 70 && valid) {
-                resultElement.innerText = 'Распределение характеристик прошло успешно!';
-            } else {
-                let errorMessage = '';
-                if (total !== 70) {
-                    errorMessage += `Сумма всех характеристик превышает 70 на ${total - 70}. `;
-                }
-                if (!valid) {
-                    errorMessage += 'Некоторые характеристики превышают допустимое значение.';
-                }
-                resultElement.innerHTML = `<span class="error">${errorMessage}</span>`;
-            }
+            resultElement.innerText = `Общая сумма характеристик: ${total}`;
         }
     </script>
 </body>
